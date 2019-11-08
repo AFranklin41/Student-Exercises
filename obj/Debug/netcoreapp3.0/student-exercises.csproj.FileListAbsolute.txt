@@ -1,0 +1,11 @@
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\obj\Debug\netcoreapp3.0\student-exercises.csprojAssemblyReference.cache
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\obj\Debug\netcoreapp3.0\student-exercises.AssemblyInfoInputs.cache
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\obj\Debug\netcoreapp3.0\student-exercises.AssemblyInfo.cs
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.exe
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.deps.json
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.runtimeconfig.json
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.runtimeconfig.dev.json
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.dll
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\bin\Debug\netcoreapp3.0\student-exercises.pdb
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\obj\Debug\netcoreapp3.0\student-exercises.dll
+C:\Users\newforce42\workspace\csharp\exercises\student-exercises\obj\Debug\netcoreapp3.0\student-exercises.pdb
