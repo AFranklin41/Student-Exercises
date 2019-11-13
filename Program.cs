@@ -74,6 +74,14 @@ namespace student_exercises
             frank.Cohort = cohortThree;
             // cohortThree.studentsInCohortList.Add(frank);
 
+            Student steve = new Student()
+            {
+                firstName = "Steve",
+                lastName = "evetS",
+                slackHandle = "Stevers",
+                Cohort = cohortThree,
+            };
+
 
             cohortTwo.studentsInCohortList.Add(alex);
             cohortOne.studentsInCohortList.Add(sable);
@@ -115,6 +123,8 @@ namespace student_exercises
             // cohortThree.instructorsInCohortList.Add(josh);
             josh.AddExercise(classes, frank);
             josh.AddExercise(dailyJournal, frank);
+            josh.AddExercise(lists, frank);
+            josh.AddExercise(watched, frank);
 
 
             cohortOne.instructorsInCohortList.Add(jordan);
@@ -126,6 +136,7 @@ namespace student_exercises
             students.Add(sable);
             students.Add(frank);
             students.Add(tommy);
+            students.Add(steve);
 
             List<Exercise> exercises = new List<Exercise>();
             exercises.Add(classes);
@@ -133,16 +144,87 @@ namespace student_exercises
             exercises.Add(watched);
             exercises.Add(dailyJournal);
 
+            List<Instructor> instructors = new List<Instructor>(){
+                instructorTommy, jordan, josh
+            };
 
-            foreach (Exercise currentExercise in exercises)
+            List<Cohort> cohorts = new List<Cohort>(){
+                cohortOne, cohortTwo, cohortThree
+            };
+
+            // List exercises for the JavaScript language by using the Where() LINQ method.
+
+            IEnumerable<Exercise> JavascriptExercises = exercises.Where(exercises => exercises.language == "Javascript");
+
+            // List students in a particular cohort by using the Where() LINQ method.
+
+            IEnumerable<Student> studentsInCohortOne = students.Where(student => student.Cohort == cohortOne);
+
+            // foreach (Student student in studentsInCohortOne)
+            // {
+            //     Console.WriteLine(student.firstName);
+            // }
+
+            // List instructors in a particular cohort by using the Where() LINQ method.
+
+            IEnumerable<Instructor> instructorsInCohortOne = instructors.Where(instructor => instructor.Cohort == cohortOne);
+
+            // foreach (Instructor instructor in instructorsInCohortOne)
+            // {
+            //     Console.WriteLine(instructor.firstName);
+            // }
+
+            // Sort the students by their last name.
+
+            IEnumerable<Student> studentsSorted = students.OrderBy(student => student.lastName).ToList();
+
+
+            // foreach (Student student in studentsSorted)
+            // {
+            //     Console.WriteLine(student.lastName);
+            // }
+
+            // Display any students that aren't working on any exercises (Make sure one of your student instances don't have any exercises. Create a new student if you need to.)
+
+            IEnumerable<Student> lazyBois = students.Where(student => student.currentExercises.Count == 0);
+
+            // foreach (Student s in lazyBois)
+            // {
+            //     Console.WriteLine(s.firstName);
+            // }
+
+            IEnumerable<Student> studentsOrderedByCurrentExerciseCount = students.OrderByDescending(student => student.currentExercises.Count());
+
+            Student hardestWorkinBoi = studentsOrderedByCurrentExerciseCount.Last();
+
+            // Console.WriteLine(hardestWorkinBoi.firstName);
+
+            // How many students in each cohort?
+
+            IEnumerable<Cohort> cohortsOrderedByDescending = cohorts.OrderByDescending(cohorts => cohorts.studentsInCohortList.Count());
+
+            foreach (Cohort cohort in cohortsOrderedByDescending)
             {
-                Console.WriteLine(currentExercise.nameOfExercise);
-                Console.WriteLine("---------");
-                List<Student> assignedStudents = students.Where(singleStudent => singleStudent.currentExercises.Any(singleExercise => singleExercise.nameOfExercise == currentExercise.nameOfExercise)).ToList();
-
-                assignedStudents.ForEach(singleStudent => Console.WriteLine(singleStudent.firstName));
-                Console.WriteLine();
+                Console.WriteLine($"{cohort.cohortName} has {cohort.studentsInCohortList.Count()} students in it!");
             }
+
+
+
+
+
+
+
+
+
+            // foreach (Exercise currentExercise in exercises)
+            // {
+            //     Console.WriteLine(currentExercise.nameOfExercise);
+            //     Console.WriteLine("---------");
+            //     List<Student> assignedStudents = students.Where(singleStudent => singleStudent.currentExercises.Any(singleExercise => singleExercise.nameOfExercise == currentExercise.nameOfExercise)).ToList();
+
+            //     assignedStudents.ForEach(singleStudent => Console.WriteLine(singleStudent.firstName));
+            //     Console.WriteLine();
+            // }
         }
     }
 }
